@@ -1,13 +1,28 @@
+.heder{
+
+    text-align: left;
+
+}
+
+
 .border{
 
     border: 1px solid;
 
     width: auto;
 
-    height: 171px;
+    height: 257px;
 
     padding-left: 17px;
 
     background-color: burlywood;
 
+}
+
+.btn-right{
+
+
+    float: right;
+
+    margin-right: 15px;
 }

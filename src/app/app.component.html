@@ -1,20 +1,17 @@
-<div>
-  <h3>Pretraga soba po cneni:</h3>
-  <input [(ngModel)]="searchText" placeholder="Search price">
+<div class="heder">
+<h3>Pretraga soba po ceni:</h3>
+<input [(ngModel)]="searchText" placeholder="Search price">
+<app-add-rooms (emitRoom) = "dispInfo($event)" ></app-add-rooms>
 </div>
-<p><label for="nazivSobe">Naziv sobe: </label>
-<input type="text" name="nazivSobe" #nnaziv></p>
-<p><label for="cenaSobe">Cena sobe: </label>
-<input type="text" name="cenaSobe" #ncena></p>
-<button (click) = "addRoom(nnaziv, ncena)">Add room</button>
-
-<div class="border" *ngFor = "let room of rooms | filter : searchText">
+<div class="border" *ngFor = "let room of rooms | filter : searchText" >
 
 <h3>Lista soba:</h3>
-
 <p>Naziv sobe: {{room.nazivSobe}} </p>
 <p>Cena sobe: {{room.cenaSobe}} din.</p>
-
+<p>Broj noci: {{room.bNocenja}}</p>
+<div class="btn-right">
+<button (click) = "deleteRoom(room)">Delete</button>
 </div>
 
+</div>
 

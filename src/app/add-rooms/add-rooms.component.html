@@ -1,0 +1,10 @@
+<div class="heder">
+    <h3>Dodavanje Sobe iz druge komponente:</h3>
+    <p><label for="nazivSobe">Naziv sobe: </label>
+    <input type="text" name="nazivSobe" #nnaziv></p>
+    <p><label for="cenaSobe">Cena sobe: </label>
+    <input type="text" name="cenaSobe" #cena></p>
+    <p><label for="brojNocenja">Broj nocenja: </label>
+    <input type="text" name="brojNocenja" #bnocenja></p>
+    <button (click) = "addRoom(nnaziv, cena, bnocenja)">Add room</button>
+    </div>

@@ -4,18 +4,20 @@ export class Rooms{
 
     cenaSobe: string;
 
+    bNocenja: string;
 
-    constructor(nazivSobe: string, cenaSobe: string){
+
+    constructor(nazivSobe: string, cenaSobe: string, bNocenja: string){
 
         this.nazivSobe = nazivSobe,
 
-        this.cenaSobe = cenaSobe
+        this.cenaSobe = cenaSobe,
 
+        this.bNocenja = bNocenja
+
+      
 
     }
 
-
-
-
-
 }
+
