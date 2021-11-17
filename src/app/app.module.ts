@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { FilterPipePipe } from './helpers/filter-pipe.pipe';
 import { FormsModule } from '@angular/forms';
 import { AddRoomsComponent } from './add-rooms/add-rooms.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AddRoomsComponent } from './add-rooms/add-rooms.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

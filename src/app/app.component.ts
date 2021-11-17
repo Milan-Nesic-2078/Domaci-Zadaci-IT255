@@ -37,6 +37,12 @@ export class AppComponent {
     dispInfo(arg){
 
       this.str1 = arg[0];
+      
+      if (this.str1.length < 6) {
+
+        console.log("Duzina je manja od 6 karaktera!")
+        
+      }
 
       this.str2 = arg[1];
 

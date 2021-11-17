@@ -1,10 +1,22 @@
-<div class="heder">
+<form [formGroup]="myForm" (ngSubmit) = "onSubmit(nName, nPrice, nNights)"> 
     <h3>Dodavanje Sobe iz druge komponente:</h3>
-    <p><label for="nazivSobe">Naziv sobe: </label>
-    <input type="text" name="nazivSobe" #nnaziv></p>
-    <p><label for="cenaSobe">Cena sobe: </label>
-    <input type="text" name="cenaSobe" #cena></p>
-    <p><label for="brojNocenja">Broj nocenja: </label>
-    <input type="text" name="brojNocenja" #bnocenja></p>
-    <button (click) = "addRoom(nnaziv, cena, bnocenja)">Add room</button>
-    </div>
+
+    <p>
+    <label>Naziv sobe: </label>
+    <input type="text"  formControlName = "rName" #nName>
+    </p>
+
+    <p>
+    <label>Cena sobe: </label>
+    <input type="text"  formControlName = "rPrice" #nPrice>
+    </p>
+
+    <p>
+    <label>Broj nocenja: </label>
+    <input type="text"  formControlName = "nights" #nNights>
+    </p>
+
+    <button type="submit" [disabled] = "!myForm.valid" >Add room</button>
+    
+</form>
+

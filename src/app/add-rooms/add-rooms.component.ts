@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-rooms',
@@ -12,20 +13,36 @@ export class AddRoomsComponent implements OnInit {
 
   arr: string[] = [];
 
-  constructor() { 
+  nroomName: string;
+
+  myForm : FormGroup;
+
+  name: string;
+
+  price: string
+
+
+  constructor(private fb: FormBuilder) { 
+
+    this.myForm = this.fb.group({
+
+      rName : ['', Validators.required],
+  
+      rPrice: ['', Validators.required],
+  
+      nights: ['', Validators.required]
+  
+    });
 
     this.emitRoom = new EventEmitter();
-    
 
   }
-
 
   ngOnInit(): void {
+
   }
 
-
-
-  addRoom(name: HTMLInputElement, price: HTMLInputElement, bNocenja: HTMLInputElement){
+  onSubmit(name: HTMLInputElement, price: HTMLInputElement, bNocenja: HTMLInputElement ){
 
     this.arr.push(name.value, price.value, bNocenja.value);
 
@@ -35,8 +52,8 @@ export class AddRoomsComponent implements OnInit {
 
     this.arr.pop();
 
-   }
+    }
 
   }
-
+  
 }
