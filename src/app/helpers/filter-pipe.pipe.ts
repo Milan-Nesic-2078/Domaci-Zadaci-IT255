@@ -11,7 +11,7 @@ export class FilterPipePipe implements PipeTransform {
     if(!searchText) return rooms;
     searchText = searchText.toLowerCase();
     return rooms.filter( it => {
-    return it.cenaSobe.toLowerCase().includes(searchText);
+    return it.cenaSobe.toLocaleString().includes(searchText);
     });
   }
 }

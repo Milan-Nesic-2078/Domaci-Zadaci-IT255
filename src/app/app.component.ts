@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { RoomServiceService } from './room-service.service';
 import { Rooms } from './rooms.model';
 
 
@@ -11,19 +12,22 @@ export class AppComponent {
 
   str1: string;
 
-  str2: string;
+  str2: number;
 
-  str3: string;
+  str3: number;
+
+  public str4: any;
+
+  str5: number;
 
   searchText: string;
 
   rooms: Rooms[] = [];
 
-  constructor(){
-
+  constructor(private _roomService: RoomServiceService){
 
   }
-  
+
   deleteRoom(arg: Rooms){
 
       delete arg.cenaSobe;
@@ -31,6 +35,8 @@ export class AppComponent {
       delete arg.nazivSobe;
 
       delete arg.bNocenja;
+
+      delete this.str5;
 
     }
 
@@ -44,15 +50,15 @@ export class AppComponent {
         
       }
 
-      this.str2 = arg[1];
+      this.str2 = parseInt(arg[1]);
 
-      this.str3 = arg[2];
+      this.str3 = parseInt(arg[2]);
 
-      console.log(this.str3);
+      this._roomService.setPrice(this.str2);
 
-      this.rooms.push(new Rooms(this.str1, this.str2, this.str3));
+      this.str5 = this._roomService.getPrice(this.str3);
 
-      
+      this.rooms.push(new Rooms(this.str1, this.str2, this.str3, this.str5));
 
     }
 

@@ -19,7 +19,7 @@ export class AddRoomsComponent implements OnInit {
 
   name: string;
 
-  price: string
+  price: number;
 
 
   constructor(private fb: FormBuilder) { 

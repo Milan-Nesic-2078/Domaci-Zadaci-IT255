@@ -2,12 +2,12 @@ export class Room{
 
     roomName: string;
 
-    roomPrice: string;
+    roomPrice: number;
 
-    bNocenja: string;
+    bNocenja: number;
 
 
-    constructor(roomName: string, roomPrice: string, bNocenja: string){
+    constructor(roomName: string, roomPrice: number, bNocenja: number, punaCena: number){
 
         this.roomName = roomName,
 
@@ -15,9 +15,8 @@ export class Room{
 
         this.bNocenja = bNocenja;
 
-        
+      
 
     }
     
-
 }
